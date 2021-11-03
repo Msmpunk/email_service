@@ -1,0 +1,30 @@
+{
+  "name": "email_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index --exec babel-node",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Msmpunk/email_service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Msmpunk/email_service/issues"
+  },
+  "homepage": "https://github.com/Msmpunk/email_service#readme",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
