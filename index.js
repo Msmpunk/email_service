@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/v1/', router);
+app.use('/api/v1', router);
 
 app.use((req,res) => {
     res.status(404).send({
