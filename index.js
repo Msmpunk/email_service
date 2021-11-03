@@ -2,6 +2,7 @@ import express from "express";
 import router from "./api/routes";
 
 const app = express();
+
 const port = process.env.PORT || 4000;
 
 app.use((req, res, next) => {
