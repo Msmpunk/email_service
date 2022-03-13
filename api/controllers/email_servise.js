@@ -22,16 +22,20 @@ export async function sentEmail(req, res){
           transporter.sendMail(mailOptions, function (err, info) {
             console.log("🚀 ~ file: email_servise.js ~ line 23 ~ info", info)
             if (err) {
-              res.json(err);
+                return res.status(400).send({
+                    status: false,
+                    message: err
+                })
             } else {
               res.json(info);
+                return res.status(200).send({
+                    status: true,
+                    message: info
+                })
             }
           });
 
-        return res.status(200).send({
-            status: true,
-            message: 'Esta funcionando el servicio getInformation'
-        })
+
         
     } catch (error) {
         return res.status(500).send({
