@@ -13,6 +13,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', function(req, res) {
+    res.send('Hola Mundo!');
+  });
+
+  
 app.use('/api/v1', router);
 
 app.use((req,res) => {
