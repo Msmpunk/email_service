@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index --exec babel-node",
-    "build": "babel src -d lib"
+    "build": "babel index.js -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,16 @@
   },
   "homepage": "https://github.com/Msmpunk/email_service#readme",
   "dependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "babel-preset-es2015-node5": "^1.2.0",
-    "babel-preset-stage-3": "^6.24.1",
     "express": "^4.17.1",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.14"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.24.1"
   }
 }

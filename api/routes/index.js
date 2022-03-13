@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getInformation } from "../controllers/email_servise"
+import { sentEmail } from "../controllers/email_servise"
 
 const router = Router();
 
-router.get('/get-information', getInformation);
+router.post('/sent-email', sentEmail);
 
 
 export default router;
