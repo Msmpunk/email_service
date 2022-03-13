@@ -3,6 +3,8 @@ const nodemailer = require("nodemailer");
 export async function sentEmail(req, res){
     try {
 
+        const { name, email, message } = req.body
+    
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -11,32 +13,26 @@ export async function sentEmail(req, res){
               
             },
           });
-          console.log("🚀 ~ file: email_servise.js ~ line 11 ~ sentEmail ~ REACT_APP_EMAIL_PASS", process.env.REACT_APP_EMAIL_PASS)
           let mailOptions = {
-            from: 'codevstackcom@gmail.com',
+            from: `${email}`,
             to: "msm0102712@gmail.com",
-            subject: `HOLA QLO`,
-            html: `The body of the email goes here in HTML`,
+            subject: `${name}`,
+            html: `${message}  ${email}`,
           };
           
           transporter.sendMail(mailOptions, function (err, info) {
-            console.log("🚀 ~ file: email_servise.js ~ line 23 ~ info", info)
             if (err) {
                 return res.status(400).send({
                     status: false,
                     message: err
                 })
             } else {
-              res.json(info);
                 return res.status(200).send({
                     status: true,
-                    message: info
+                    message: "done"
                 })
             }
           });
-
-
-        
     } catch (error) {
         return res.status(500).send({
             status: false,
